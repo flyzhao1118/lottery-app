@@ -1,38 +1,96 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.flex {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .ticket-layout {
+  width: 500px;
+}
+
+.App .ticket-layout .header-zone {
+  justify-content: space-between;
+}
+
+.App .ticket-layout .header-zone .sequence {
+  color: #444;
+}
+
+.App .ticket-layout .header-zone .draw-result-zone .number-item {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  text-align: center;
+  box-shadow: 0 0 4px #ccc inset;
+  font-weight: bold;
+}
+
+.App .ticket-layout .header-zone .draw-result-zone .number-item.primary-number-activated {
+  color: #fff;
+  background-color: #3851a1;
+}
+
+.App .ticket-layout .header-zone .draw-result-zone .number-item.secondary-number-activated {
+  color: #fff;
+  background-color: #8b9ba9;
+}
+
+.App .ticket-layout .header-zone .operation-zone .icon {
+  width: 32px;
+}
+
+.App .ticket-layout .header-zone .operation-zone .icon:nth-last-child(1) {
+  margin-left: 10px;
+}
+
+.App .ticket-layout .draw-number-zone {
+  margin-top: 10px;
+  padding: 0 40px 0 10px;
+  color: #6b4395;
+}
+
+.App .ticket-layout .draw-number .draw-number-zone {
+  flex-wrap: wrap;
+}
+
+.App .ticket-layout .draw-number .draw-number-zone .draw-number-item {
+  width: 45px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.App .ticket-layout .draw-number .draw-number-zone .draw-number-item.item-active {
+  background-color: #e8e4f0;
+  position: relative;
+}
+
+.App .ticket-layout .draw-number .draw-number-zone .draw-number-item.item-active:after {
+  content: '×';
+  font-size: 55px;
+  line-height: 22px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  opacity: 0.2;
+}
+
+.App .ticket-layout .draw-number .select-word {
+  margin-top: 10px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  background-color: #879baa;
+  font-size: 13px;
+  font-weight: bold;
 }
